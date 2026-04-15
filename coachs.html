@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"
+        integrity="sha512-oQ1yQwSEIc9CTcK7pffEyS8fxom2iUWQrALk3j3+wfdSDjQ77EZbzGMGe2ZYmfoC8M9vR47apbS1ZYbW05y/pg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+      body {
+            margin: 0;
+            padding: 0;
+            font-family: 'lexend', sans-serif;
+            background:#000000;;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            background: #0E0E0E;
+        }
+
+        .Entete {
+            height: 115px;
+            background: #0E0E0E;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+
+
+
+        }
+
+        .menu {
+            width: 1000px;
+
+            justify-content: space-around;
+            align-items: center;
+            word-spacing: 50px;
+        }
+
+        a {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+
+        }
+        .couleur1 {
+        color: #FF9062;
+    }
+        .btn {
+            padding: 15px 35px;
+            background: #FF9062;
+            display: inline-block;
+            border-radius: 10px;
+
+
+        }
+        .couleur1btn {
+        
+        background: transparent;
+        transition: border-color 0.3s, color 0.3s;
+        padding: 15px 35px;
+        display: inline-block;
+        border-radius: 10px;
+
+
+    }
+    .couleur1btn:hover {
+        color: white;
+        background: transparent;
+        border-bottom-color:white;
+        background: #FF9062;
+        
+        display: inline-block;
+        border-radius: 10px;
+    }
+    .burger-icon, .close-icon {
+    display: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 430px) {
+    .burger-icon {
+        display: block; /* Affiche l'icône sur iPhone */
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Cache le tiroir à droite */
+        width: 75% !important;
+        height: 100vh;
+        background: #0E0E0E;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s ease; /* Animation fluide */
+        z-index: 2000;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* LA MAGIE ICI : Si l'input est coché, on déplace le menu */
+    #menu-toggle:checked ~ .menu {
+        right: 0;
+    }
+
+    .close-icon {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    .menu a {
+        font-size: 18px;
+        width: auto;
+    }
+
+    .btn {
+        margin-left: 0 !important;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+     
+    
+    
+    
+    
+    
+    
+    /* ================heros ================*/
+
+
+
+
+
+
+        .Heros {
+            height: 600px;
+            margin-top: 89px;
+            
+
+         background-image: url('generated-image-5fc5f38e-7963-4bba-806b-b448bf0fc4a1.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+
+            /* CRITIQUE : Obligatoire pour que le ::before se place PAR RAPPORT à cette div */
+            position: relative;
+
+            /* Optionnel : cache tout ce qui dépasse */
+            overflow: hidden;
+        }
+
+        .Heros::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* CRITIQUE : Il faut dire au calque de prendre toute la place */
+            width: 100%;
+            height: 100%;
+
+            /* MODIFICATION : On baisse l'opacité à 0.6 pour voir l'image derrière */
+            background-color: rgba(0, 0, 0, 0.6);
+
+            /* Le calque est au niveau 1 */
+            z-index: 1;
+        }
+
+        /* Pour que TOUT le contenu (texte, boutons) dans .Heros soit visible */
+        .Heros>* {
+            position: relative;
+            z-index: 2;
+            /* Doit être supérieur au z-index du ::before */
+        }
+
+        h2 {
+            color: #FF9062;
+        }
+        .couleur1 {
+            color: #FF9062;
+            
+        }
+        
+        
+
+        .couleur1a {
+            padding-top: 50px;
+            font-size: 24px;
+            color: #FF9062;
+            margin-left: 40PX;
+        }
+
+        h1 {
+            font-size: 96px;
+            font-weight: bolder;
+            margin-left: 40px;
+            color: white;
+        }
+
+        .droit {
+            margin-left: 40px;
+            font-size: 18px;
+            color: #ADAAAA;
+            width: 45%;
+
+        }
+
+
+
+
+@media (max-width: 430px) {
+    /* --- SECTION HEROS --- */
+    .Heros {
+        height: 750px; 
+        padding-bottom: 50px;
+        text-align: center; 
+        margin-left: 20px ;
+        
+    }
+
+     h1 {
+        font-size: 46px; /* 96px est trop gros pour un iPhone */
+        line-height: 55px;
+        margin-left: 20px;
+        width: 90%;
+    }
+    .droit {
+            margin: 20px auto;
+        font-size: 16px;
+        height: auto;
+        text-align: center;
+        width: 90%;
+        margin-left: 20px auto;
+
+        }
+
+        .couleur1a {
+            
+         margin: 30px auto;  
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*============== Coachs ===================================  */
+        .cont {
+            display: grid;
+            /* Crée 2 colonnes égales */
+            grid-template-columns: repeat(2, 1fr);
+
+            /* L'espace entre les cases */
+            column-gap: 20px;
+            row-gap: 50px;
+
+
+            /* Centre les colonnes si elles ne prennent pas 100% de la largeur */
+            justify-items: center;
+            max-width: 1200px;
+            margin: 40px;
+        }
+
+        .rect1 {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('moussa.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.7;
+            line-height: 5px;
+
+        }
+
+        .rect1:hover {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('moussa.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease-in-out;
+            border: 2px solid #FF9062;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 144, 98, 0.2);
+            opacity: 0.7;
+
+        }
+
+        .rect2 {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('fatou.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.7;
+            line-height: 5px;
+        }
+
+        .rect2:hover {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('fatou.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            border: 2px solid #FF9062;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 144, 98, 0.2);
+            opacity: 0.7;
+        }
+
+
+        .rect3 {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('Personal Trainer Photo.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.7;
+            line-height: 5px;
+
+        }
+
+        .rect3:hover {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('Personal Trainer Photo.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid #FF9062;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 144, 98, 0.2);
+            opacity: 0.7;
+
+
+
+        }
+
+        .rect4 {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('coachnutrition.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.7;
+            line-height: 5px;
+        }
+
+        .rect4:hover {
+            width: 90%;
+            height: 400px;
+
+            /* Style pour la visibilité */
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            background-image: url('coachnutrition.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid #FF9062;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 144, 98, 0.2);
+            opacity: 0.7;
+        }
+        .cont1{
+            width: 160px;
+            height: 20px;
+            color: white;
+            background-color: #FF9062;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20px 20px 20px 20px;
+            margin-left: 20px;
+            margin-top:  220px;
+            opacity: 0.8;
+        }
+        .nom{
+            font-size: 30px;
+            font-weight: 50px;
+            color:white;
+            margin-left:20px;
+        }
+        .nom1{
+            color: #FF9062;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        .nom2{
+            margin-left: 20px;
+            color: #ADAAAA;
+        }
+
+        @media (max-width:430px){
+            .cont{
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+        }
+
+
+
+        /* =========Par===================================== */
+        .partie3{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            background: #1a1a1a;
+            align-items: center;
+            height: 700px;
+        }
+
+        .carre1{
+            width: 45%;
+            height: 500px;
+            color: white;
+            font-size: 40px;
+            margin-left: 40px;
+        }
+        .carre2{
+            width: 45%;
+            height: 500px;
+            background-image: url('7-removebg-preview.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .droit1 {
+            
+            font-size: 18px;
+            color: #ADAAAA;
+            
+
+        }
+        .content{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            
+        }
+        .icons{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            background: #561b00;
+            opacity: 0.2;
+        }
+        .cert{
+            margin-left: 10px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+        .cert1{
+            margin-left: 10px;
+            font-size: 12px;
+            color: #ADAAAA;
+        }
+        @media (max-width: 430px){
+            /* --- SECTION PARTIE 3 (Texte + Image Produit) --- */
+    .partie3 {
+        flex-direction: column !important; /* On empile les deux blocs */
+        height: auto !important; /* On annule les 700px fixes pour laisser respirer le contenu */
+        padding: 50px 20px !important;
+        text-align: center; /* On centre le texte pour le mobile */
+        gap: 30px;
+    }
+
+    .carre1 {
+        width: 100% !important; /* Prend toute la largeur */
+        height: auto !important;
+        margin-left: 0 !important; /* On enlève le décalage de 40px */
+        font-size: 28px !important; /* 40px est trop grand, on réduit pour mobile */
+    }
+
+    .carre2 {
+        width: 100% !important;
+        height: 300px !important; /* On fixe une hauteur pour l'image sur mobile */
+        background-size: contain !important; /* Très important : "contain" évite de couper ton image PNG */
+        margin-top: 20px;
+    }
+
+    .droit1 {
+        font-size: 16px !important;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajustement des icônes de certification en bas du texte */
+    .content {
+        flex-direction: row; /* On les garde sur une seule ligne */
+        justify-content: center !important;
+        gap: 10px;
+    }
+
+    .icons {
+        width: 45px !important;
+        height: 45px !important;
+        opacity: 0.5 !important; /* On augmente un peu l'opacité pour la visibilité mobile */
+    }
+
+    .cert {
+        font-size: 14px !important;
+    }
+
+    .cert1 {
+        font-size: 11px !important;
+    }
+        }
+/* ========foooter========= ================================*/
+
+
+      footer {
+
+            display: flex;
+            height: 400px;
+            background-color: black;
+            justify-content: space-around;
+        }
+
+        .rect5 {
+            width: 50%;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .rect5a {
+            width: 20%;
+            height: 300px;
+
+
+        }
+
+        .para6 {
+
+            color: #ADAAAA;
+            width: 50%;
+        }
+
+        .para6a {
+            margin-top: 40px;
+
+            color: white;
+            width: 50%;
+            font-size: 16px;
+            line-height: 50px;
+        }
+
+
+        .logo {
+            margin-left: 40px;
+
+        }
+        .cont8 {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cercle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #561b00;
+            opacity: 0.3;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+
+@media (max-width: 430px) {
+    footer {
+        flex-direction: column !important; /* On empile les colonnes verticalement */
+        height: auto !important; /* On retire la hauteur fixe de 400px */
+        padding: 40px 20px;
+        text-align: center; /* On centre tout pour un look mobile propre */
+        align-items: center;
+    }
+
+    .rect5, .rect5a {
+        width: 100% !important; /* Chaque bloc prend toute la largeur */
+        height: auto !important;
+        margin-bottom: 30px;
+    }
+
+    .para6 {
+        width: 90% !important; /* On élargit le texte pour qu'il soit lisible */
+        margin: 0 auto !important;
+    }
+
+    .para6a {
+        width: 100% !important;
+        margin-top: 20px !important;
+        line-height: 40px !important; /* Espacement vertical pour cliquer facilement */
+    }
+
+    .logo {
+        margin-left: 0 !important; /* On retire le décalage à gauche */
+        margin-bottom: 20px;
+    }
+
+    /* Centre les réseaux sociaux */
+    .cercle {
+        margin: 0 auto;
+    }
+}
+
+
+.droit {
+            margin-left: 40px;
+            font-size: 14px;
+            color: #ADAAAA;
+
+        }
+
+        .cont10 {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            background: #000000;
+        }
+
+        .prod {
+            color: #484847;
+            font-size: 14px;
+            margin-right: 70px;
+
+        }
+
+        @media(max-width:430px){
+
+            /* --- BARRE DE DROITS (Bas de page) --- */
+    .cont10 {
+        flex-direction: column !important; /* Empile les textes verticalement */
+        height: auto !important;
+        padding: 20px 0 !important;
+        text-align: center; /* Centre les textes */
+        gap: 10px; /* Ajoute un petit espace entre les deux lignes */
+    }
+
+    .droit {
+        margin-left: 0 !important; /* Retire le décalage de 40px */
+        font-size: 12px !important; /* Un peu plus petit pour mobile */
+    }
+
+    .prod {
+        margin-right: 0 !important; /* Retire le décalage de 70px */
+        font-size: 12px !important;
+    }
+        }
+
+
+
+
+
+       
+        </style>
+</head>
+<body>
+    <header>
+        <div class="Entete">
+            <div>
+                <img src="1-removebg-preview.png" alt="logo" style="width: 115px ; height: 115px; ;">
+            </div>
+            <input type="checkbox" id="menu-toggle" style="display: none;">
+
+            <label for="menu-toggle" class="burger-icon">
+                <span class="iconify" data-icon="lucide:menu"></span>
+            </label>
+
+            <div class="menu">
+                <label for="menu-toggle" class="close-icon">✕</label>
+            <div class="menu">
+                <a href="index.html" class="couleur1btn">Accueil</a>
+                <a href="Programme.html" class="couleur1btn">Programmes</a>
+                <a href="Tarifs.html" class="couleur1btn">Tarifs</a>
+                <a href="" class="couleur1"> Coachs</a>
+                 <a href="formulaire.html" class="couleur1btn">Contacts</a>
+
+                
+                <a href="formulaire.html" class="btn ">s'inscrire</a>
+            </div>
+            <!-- partie heros -->
+           
+
+
+        </div>
+    </header>
+     <section class="Heros">
+        <p class="couleur1a"> ELITE PERFORMANCE DAKAR </P>
+        <h1>L'Élite qui vous <span class="couleur1">transpulse.</span></h1>
+        <p class="droit">Plus que des entraîneurs, des partenaires de performance. Nos experts
+transforment votre potentiel en résultats concrets grâce à une approche
+scientifique et passionnée.</p>
+
+
+
+<!-- ==========Coachs ================= -->
+
+
+    </section>
+     <section class="cont">
+        <div class="rect1">
+        <p class="cont1">LEAD COACH</p>
+        <p class="nom">MOUSSA</p>
+        <p class="nom1">Musculation & Powerlifting</P>
+        </div>
+        <div class="rect2">
+        <p class="cont1">YOGA & PILATES </p>
+        <p class="nom">FATOU</p>
+        <p class="nom1">Mobilité & Posture</P>
+        </div>
+        <div class="rect3">
+        <p class="cont1">LEAD COACH</p>
+        <p class="nom">OMAR</p>
+        <p class="nom1">Cross-Training & HIIT</P>
+            <p class="nom2">Le moteur de vos séances les plus intenses.</p>
+        </div>
+        <div class="rect4">
+        <p class="cont1">LEAD COACH</p>
+        <p class="nom">AWA</p>
+        <p class="nom1">Nutrition & Wellness</P>
+            <p class="nom2">L'optimisation métabolique au service de votre corps.</p>
+        </div>
+
+
+        
+
+
+    </section>
+
+    <!-- ============Patie trois================================= -->
+<section class="partie3">
+    <div class="carre1">
+                <h3>Une expertise <span class="couleur1">sans compromis
+<p class="droit1">Chaque coach de SUNUGAL SPORT 221 est sélectionné pour son
+excellence académique et son parcours athlétique. Notre passion
+est le carburant de votre transformation.</p>
+
+<div class="content">
+    <div class="icons"></div>
+    <p class="cert">Certifications Internationales
+    <br > <span class="cert1">Diplômés NASM, BPJEPS et experts en nutrition sportive de renommée
+mondiale.</span></p>
+</div>
+    <div class="content">
+    <div class="icons"></div>
+    <p class="cert">Passion Dakar
+    <br > <span class="cert1">Diplômés NASM, BPJEPS et experts en nutrition sportive de renommée
+mondiale.</span></p>
+</div>
+    
+   
+    <div class="content">
+    <div class="icons"></div>
+    <p class="cert">Suivi Personnalisé
+    <br > <span class="cert1">Analyses biométriques hebdomadaires pour garantir une progression
+constante.</span></p>
+</div>
+    </div>
+
+    </div>
+    <div class="carre2"></div>
+
+</section>
+
+
+
+     <!-- /* ===================== foooter =========================== */ -->
+
+    <footer>
+            <div class="rect5">
+                <div class="logo">
+                    <img src="1-removebg-preview.png" alt="logo" style="width: 115px ; height: 115px; ;">
+                    <p class="para6">Le centre de performance ultime au cœur de
+                        Dakar. Forgez votre corps, libérez votre esprit.</p>
+                    <div class="cont8">
+
+                        <div class="cercle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="#FF9062"
+                                    d="M5.5 15.5c1.07 0 2.02-.5 2.67-1.26l6.87 3.87c-.01.13-.04.26-.04.39c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5s-1.57-3.5-3.5-3.5c-1.07 0-2.02.5-2.67 1.26l-6.87-3.87c.01-.13.04-.26.04-.39s-.02-.26-.04-.39l6.87-3.87C16.47 8.5 17.42 9 18.5 9C20.43 9 22 7.43 22 5.5S20.43 2 18.5 2S15 3.57 15 5.5c0 .13.02.26.04.39L8.17 9.76A3.48 3.48 0 0 0 5.5 8.5C3.57 8.5 2 10.07 2 12s1.57 3.5 3.5 3.5m13 1.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5m0-13c.83 0 1.5.67 1.5 1.5S19.33 7 18.5 7S17 6.33 17 5.5S17.67 4 18.5 4m-13 6.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5S4 12.83 4 12s.67-1.5 1.5-1.5" />
+                            </svg>
+                        </div>
+                        <div class="cercle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <g fill="none" stroke="#FF9062" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M12.597 21.8a.995.995 0 0 1-1.194 0C6.253 17.976.785 10.109 6.31 4.425A7.93 7.93 0 0 1 12 2c2.134 0 4.18.872 5.689 2.424c5.526 5.684.059 13.55-5.092 17.377" />
+                                    <path d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="rect5a">
+                <p class="para6a">EXPLORATION</p>
+                <P class="para6">Programmes</P>
+                <P class="para6">Tarifs</P>
+                <P class="para6">Equipe</P>
+                <P class="para6">Planning</P>
+            </div>
+            <div class="rect5a">
+                <p class="para6a">LEGAL</p>
+                <p class="para6">Contacts</p>
+                <p class="para6">Mentions legal</p>
+                <p class="para6">Localisation</p>
+
+            </div>
+            </footer>
+<div class="cont10">
+            <p class="droit1">© 2024 SUNUGAL SPORT 221. Dakar, Sénégal.</p>
+            <p class="prod">produit par Dakar E221 Tech</p>
+
+        </div>
+
+
+    
+    
+</footer>
+
+</body>
+</html>
